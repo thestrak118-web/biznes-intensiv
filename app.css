@@ -523,88 +523,127 @@ ul { margin: 0; padding: 0; list-style: none; }
 .goal p { color: var(--muted); }
 .goal b { display: block; margin-top: 10px; color: var(--gold-txt); text-transform: uppercase; }
 
-/* ---------- Ekspert ---------- */
+/* ---------- Ekspert (Figma: foto 367x337 @ left 24, halqa r138.5) ---------- */
+
+.sect--expert { padding-bottom: 40px; }
+.h2--lg { font-size: 22px; line-height: 28px; }
 
 .expert {
   position: relative;
-  margin-top: 18px;
-  border-radius: 14px;
-  overflow: hidden;
-  background:
-    radial-gradient(80% 60% at 50% 20%, rgba(251,191,36,.12), transparent 70%),
-    var(--card-2);
+  width: 100%;
+  max-width: 406px;
+  aspect-ratio: 406 / 337;
+  margin: 18px auto 0;
 }
-.expert__ph {
-  position: relative;
-  aspect-ratio: 367 / 337;
-  display: grid;
-  place-items: end center;
-}
-/* Dizayndagi nozik oltin halqa */
-.expert__ph::before {
-  content: "";
+
+.expert__glow {
   position: absolute;
-  top: 6%;
-  left: 50%;
-  width: 74%;
-  aspect-ratio: 1;
+  left: 50%; top: 4%;
+  width: 83.7%; height: 89%;
   transform: translateX(-50%);
-  border: 1px solid rgba(251, 191, 36, .22);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(212,175,55,.22), rgba(212,175,55,.06) 55%, transparent 72%);
+  pointer-events: none;
+}
+
+/* Halqa: markaz (203, 131.5), radius 138.5 */
+.expert__ring {
+  position: absolute;
+  left: 15.887%; top: -2.077%;
+  width: 68.227%;
+  aspect-ratio: 1;
+  border: 1px solid #2E2A23;
   border-radius: 50%;
 }
-.expert__ph picture { display: contents; }
-.expert__ph img {
-  position: relative;
-  width: 100%;
+
+.expert__dot {
+  position: absolute;
+  top: 37.39%;
+  width: 2.709%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #2E2A23;
+}
+.expert__dot--l { left: 15.271%; }
+.expert__dot--r { left: 82.759%; }
+
+.expert__lab {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2E2A23;
+  text-align: center;
+  white-space: nowrap;
+}
+.expert__lab b { font-weight: 700; }
+.expert__lab i { font-style: normal; font-weight: 400; }
+
+.expert__lab--l {
+  left: 5.273%; top: 25.14%;
+  width: 12.315%;
+  transform: rotate(-31.17deg);
+}
+.expert__lab--l b { font-size: 16px; line-height: 22px; }
+.expert__lab--l i { font-size: 14px; line-height: 14px; }
+
+.expert__lab--r {
+  left: 79.281%; top: 25.04%;
+  width: 15.025%;
+  transform: rotate(34.01deg);
+}
+.expert__lab--r b { font-size: 16px; line-height: 17px; }
+.expert__lab--r i { font-size: 12px; line-height: 13px; }
+
+.expert picture { display: contents; }
+.expert img {
+  position: absolute;
+  left: 5.911%; top: 0;
+  width: 90.394%;
   height: 100%;
-  object-fit: contain;
-  object-position: bottom center;
+  object-fit: cover;
 }
 
-.expert__stats {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 0 6px;
-  margin-top: -18px;
+/* Ism kartasi: 366x449, r21, 0.5px #D4AF37, fotoga 12px kirib turadi */
+.ecard {
+  margin-top: -12px;
   position: relative;
   z-index: 2;
-}
-.stat {
-  padding: 8px 14px;
-  background: rgba(24,24,27,.9);
-  border: 1px solid rgba(251,191,36,.35);
-  border-radius: 999px;
-  font-size: 12px;
-  color: #E4E4E7;
-  backdrop-filter: blur(6px);
-}
-.stat b { color: var(--gold-txt); }
-
-.ecard {
-  margin-top: 16px;
-  padding: 18px;
-  background: var(--card-2);
-  border: 1px solid rgba(251,191,36,.35);
-  border-radius: 14px;
+  padding: 20px 17px;
+  background: #111111;
+  border: .5px solid #D4AF37;
+  border-radius: 21px;
 }
 .ecard h3 {
   font-family: var(--font-display);
-  margin: 0 0 14px;
-  font-size: 20px;
-  font-weight: 800;
+  margin: 0 0 12px;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  color: var(--gold-txt);
+  background: linear-gradient(180deg, #FFF1C5 0%, #D4AF37 55%, #A87C1E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.ecard h3 span { color: #fff; }
-.ecard li { display: flex; gap: 10px; margin-bottom: 12px; color: #E4E4E7; }
-.ecard li::before { content: "•"; color: var(--gold-txt); }
+.ecard ul { padding-left: 18px; }
+.ecard li {
+  display: list-item;
+  list-style: disc;
+  margin-bottom: 22px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #BFBFBF;
+}
+.ecard li::marker { color: #BFBFBF; }
+.ecard li:last-child { margin-bottom: 0; }
 .ecard__hl {
-  margin-top: 14px;
+  margin-top: 20px;
   padding: 14px;
-  background: var(--card);
+  background: #18181B;
   border-radius: 10px;
+  font-size: 14px;
+  line-height: 22px;
   color: #D4D4D8;
 }
 .ecard__hl b { color: var(--gold-txt); }
@@ -612,6 +651,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-top: 14px;
   padding-left: 14px;
   border-left: 2px solid var(--gold-txt);
+  font-size: 14px;
+  line-height: 22px;
   color: #A1A1AA;
   font-style: italic;
 }
