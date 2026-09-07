@@ -112,7 +112,7 @@ hr { border: 0; margin: 0; }
   border-radius: 12px;
   font-size: 20px;
   line-height: 23.86px;
-  font-weight: 400;
+  font-weight: 700;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
@@ -295,10 +295,10 @@ hr { border: 0; margin: 0; }
 .arrow::after {
   content: "";
   position: absolute;
-  left: 50%; bottom: 0;
-  width: 13px; height: 13px;
-  border-right: 3px solid #FED794;
-  border-bottom: 3px solid #FED794;
+  left: 50%; bottom: 1px;
+  width: 16px; height: 16px;
+  border-right: 3.5px solid #FED794;
+  border-bottom: 3.5px solid #FED794;
   transform: translateX(-50%) rotate(45deg);
 }
 
@@ -672,10 +672,10 @@ hr { border: 0; margin: 0; }
   margin: 18px auto 0;
 }
 
-/* Ellipse 21: 169px #FFDC9A, blur 174 */
+/* Ellipse 21: 169px #FFDC9A, blur 174, markaz (203.5, 226.5) */
 .expert__glow {
   position: absolute;
-  left: 50%; top: 42%;
+  left: 50.12%; top: 67.21%;
   width: 41.6%;
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
@@ -721,14 +721,18 @@ hr { border: 0; margin: 0; }
 }
 .expert__lab i { font-style: normal; }
 .expert__lab--l {
-  left: 5.27%; top: 25.14%;
-  width: 14.75%;
+  left: 6.482%; top: 28.28%;
+  width: 12.34%;
+  height: 32.9px;
+  justify-content: center;
   line-height: 22px;
   transform: rotate(-31.17deg);
 }
 .expert__lab--r {
-  left: 79.28%; top: 25.04%;
-  width: 16.57%;
+  left: 80.071%; top: 29.327%;
+  width: 15%;
+  height: 30.1px;
+  justify-content: center;
   line-height: 17px;
   transform: rotate(34.01deg);
 }
