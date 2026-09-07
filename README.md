@@ -33,6 +33,12 @@ cd site && python3 -m http.server 8777
 <img src="assets/dostonjon.jpg" alt="Dostonjon Soyibov">
 ```
 
+## Aniqlik
+
+Sayt Figma REST API orqali olingan JSON (`Adras Reference Library`, node `20:3`) bilan
+element-ma-element solishtirilgan: har bir blokning Y koordinatasi va balandligi
+Figma qiymatidan **8px dan kam** farq qiladi, umumiy balandlik 7079px (Figma 7087px).
+
 ## Figma'dan olingan qiymatlar
 
 - Fon `#080808`, karta `#18181B`, chegara `#27272A`
