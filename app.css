@@ -54,10 +54,17 @@ hr { border: 0; margin: 0; }
 
 /* ---------- Layout ---------- */
 
-.wrap {
+/* Butun sahifa Figma freymi kabi 406px ustun; foni hamma joyda bir xil */
+.page {
   width: 100%;
   max-width: var(--w);
   margin-inline: auto;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.wrap {
+  width: 100%;
   padding-inline: var(--pad);
 }
 
