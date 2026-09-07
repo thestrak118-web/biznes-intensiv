@@ -11,7 +11,7 @@
   --gold-1:    #FED48C;
   --gold-2:    #FFDB9E;
   --gold-sh:   #D88800;
-  --gold-txt:  #FBBF24;
+  --gold-txt:  #FFE29E;
   --brown:     #733A00;
 
   --green:     #22C55E;
@@ -31,6 +31,8 @@
   --r:    12px;
 
   --font: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Figma sarlavha/tugmalarda HelveticaNeue ishlatgan */
+  --font-display: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -64,13 +66,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding-inline: var(--pad);
 }
 
-.sect { padding-block: 40px; }
-.sect--light { background: #FFFFFF; color: #111111; }
+.sect { padding-block: 46px 40px; }
+.sect--light { background: #FFFFFF; color: #111111; padding-block: 30px 45px; }
 
 /* ---------- Tipografika ---------- */
 
 .h2 {
   margin: 0;
+  font-family: var(--font-display);
   font-size: 20px;
   line-height: 28px;
   font-weight: 700;
@@ -88,12 +91,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- Tugmalar ---------- */
 
 .btn {
+  font-family: var(--font-display);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 56px;
-  padding: 16px 20px;
+  height: 83px;
+  padding: 0 8px;
+  white-space: nowrap;
   border: 0;
   border-radius: var(--r);
   font-size: 20px;
@@ -109,45 +114,63 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: linear-gradient(180deg, var(--gold-1) 0%, var(--gold-2) 50%, var(--gold-1) 100%);
   color: var(--brown);
   box-shadow: 0 4px 0 0 var(--gold-sh), inset 0 2px 3px 1px rgba(255,255,255,.25);
+  border-radius: 12px;
 }
 .btn--gold:hover { filter: brightness(1.04); }
 .btn--gold:active { transform: translateY(3px); box-shadow: 0 1px 0 0 var(--gold-sh), inset 0 2px 3px 1px rgba(255,255,255,.25); }
 
-.btn--green {
-  background: linear-gradient(180deg, #2FCB6B 0%, #128A3F 100%);
+.btn--green, .btn--blue {
+  height: 59px;
+  max-width: 334px;
+  margin-inline: auto;
   color: #fff;
-  box-shadow: 0 4px 0 0 #0B6A2F, inset 0 2px 3px 1px rgba(255,255,255,.18);
+}
+.btn--green {
+  background: linear-gradient(180deg, #006625 0%, #3BC56E 50%, #006625 100%);
+  box-shadow: 0 4px 0 0 #004619, inset 0 2px 3px 1px rgba(255,255,255,.25);
 }
 .btn--blue {
-  background: linear-gradient(180deg, #4D8BFF 0%, #1D4FD8 100%);
-  color: #fff;
-  box-shadow: 0 4px 0 0 #163FA8, inset 0 2px 3px 1px rgba(255,255,255,.18);
+  background: linear-gradient(180deg, #004FAF 0%, #2C8BFF 50%, #004FAF 100%);
+  box-shadow: 0 4px 0 0 #003372, inset 0 2px 3px 1px rgba(255,255,255,.25);
 }
 .btn--green:active, .btn--blue:active { transform: translateY(3px); }
 
 /* Oq "ISHTIROK ETISH — BEPUL" plashkasi + tugma juftligi */
-.cta-stack { position: relative; padding-top: 32px; }
+.cta-stack { position: relative; padding-top: 35px; }
+.hero .cta-stack { margin-top: 29.5px; }
+.hero .btn { max-width: 352px; margin-inline: auto; }
 .cta-badge {
+  font-family: var(--font-display);
   position: absolute;
   top: 0; left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  padding: 9px 22px 18px;
+  width: 319px;
+  max-width: 100%;
+  height: 76px;
+  padding-top: 5px;
   background: #fff;
   color: #111;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 500;
+  border-radius: 14px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
   white-space: nowrap;
 }
-.cta-badge b { color: #E31E1E; font-weight: 800; }
+.cta-badge b { color: #E11D1D; font-weight: 700; }
 .cta-stack .btn { position: relative; z-index: 3; }
 
 .cta-note {
-  margin-top: 14px;
-  font-size: 13px;
+  margin-top: 12px;
+  width: 319px;
+  max-width: 100%;
+  margin-inline: auto;
+  font-size: 14px;
+  line-height: 19.5px;
+  font-weight: 300;
   font-style: italic;
-  color: #8A8A93;
+  color: #A1A1AA;
   text-align: center;
 }
 
@@ -155,8 +178,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .hero {
   position: relative;
-  padding-top: 34px;
-  padding-bottom: 34px;
+  padding-top: 17px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.055);
   overflow: hidden;
   background:
     radial-gradient(120% 60% at 50% 0%, rgba(254,212,140,.10), transparent 60%),
@@ -168,8 +192,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   justify-content: center;
   gap: 8px;
   font-size: 16px;
-  font-weight: 500;
-  letter-spacing: .04em;
+  line-height: 17px;
+  font-weight: 400;
+  letter-spacing: .55px;
+  color: #D4D4D8;
+  text-transform: uppercase;
 }
 .hero__top i {
   width: 7px; height: 7px;
@@ -179,41 +206,53 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .hero__pill {
   display: block;
-  margin: 18px auto 0;
+  margin: 41px auto 0;
   width: max-content;
   max-width: 100%;
-  padding: 8px 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-size: 13px;
-  color: #E4E4E7;
+  padding: 2px 12px;
+  border: 1px solid #3F3F46;
+  border-radius: 9999px;
+  background: rgba(24, 24, 27, .8);
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: .3px;
+  color: #D4D4D8;
   text-align: center;
 }
 .hero h1 {
-  margin: 20px 0 0;
-  font-size: 24px;
-  line-height: 32px;
+  font-family: var(--font-display);
+  max-width: 390px;
+  margin: 24px auto 0;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: -.6px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
 }
 .hero h1 .gold { color: var(--gold-txt); }
-.hero__sub { margin-top: 16px; }
+.hero__sub {
+  max-width: 377px;
+  margin: 10px auto 0;
+  font-size: 14px;
+  line-height: 19.5px;
+  color: #A1A1AA;
+}
 
 .arrow {
-  width: 2px;
-  height: 96px;
-  margin: 26px auto 18px;
-  background: linear-gradient(180deg, transparent, var(--gold-txt));
   position: relative;
+  width: 3px;
+  height: 124px;
+  margin: 22.5px auto 0;
+  background: linear-gradient(180deg, rgba(217,217,217,0) 0%, #D9D9D9 55%);
 }
 .arrow::after {
   content: "";
   position: absolute;
-  left: 50%; bottom: -1px;
-  width: 12px; height: 12px;
-  border-right: 2px solid var(--gold-txt);
-  border-bottom: 2px solid var(--gold-txt);
+  left: 50%; bottom: 0;
+  width: 13px; height: 13px;
+  border-right: 3px solid #D9D9D9;
+  border-bottom: 3px solid #D9D9D9;
   transform: translateX(-50%) rotate(45deg);
 }
 
@@ -221,41 +260,46 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .pcard {
   position: relative;
-  margin-top: 20px;
-  padding: 20px 18px;
-  background: var(--card-2);
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  margin-top: 22px;
+  padding: 18px 9px 17px 17px;
+  background: #111111;
+  border: .5px solid;
+  border-radius: 21px;
   overflow: hidden;
 }
-.pcard--green { border-color: rgba(34,197,94,.55); box-shadow: 0 0 26px -12px rgba(34,197,94,.65); }
-.pcard--blue  { border-color: rgba(59,130,246,.55); box-shadow: 0 0 26px -12px rgba(59,130,246,.65); }
+.pcard:first-of-type { margin-top: 12px; }
+.pcard--green { border-color: #086D2D; box-shadow: inset 3px 0 0 0 #22C55E; }
+.pcard--blue  { border-color: #538AFF; box-shadow: inset 3px 0 0 0 #0073BF; }
 
 .pcard__no {
+  font-family: var(--font-display);
   position: absolute;
-  top: 10px; right: 16px;
+  top: 45px; right: 37px;
   font-size: 64px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: .02em;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 .pcard--green .pcard__no { color: rgba(34,197,94,.10); }
 .pcard--blue  .pcard__no { color: rgba(59,130,246,.14); }
 
 .pcard__t {
+  font-family: var(--font-display);
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  max-width: 70%;
+  max-width: 204px;
 }
-.pcard__lead { margin-top: 16px; font-weight: 700; }
+.pcard__lead { margin-top: 13px; font-size: 16px; line-height: 19.5px; font-weight: 700; }
 
-.bullets { margin-top: 10px; display: grid; gap: 6px; }
-.bullets li { display: flex; gap: 8px; color: #D4D4D8; }
-.bullets li::before { content: "•"; color: #D4D4D8; }
-.pcard .btn { margin-top: 18px; }
+.bullets { margin-top: 8px; display: block; }
+.bullets li { display: block; font-size: 14px; line-height: 27px; color: #BFBFBF; }
+.bullets li::before { content: "• "; color: #BFBFBF; }
+
+.cline { height: 1px; margin: 7px 0 0; background: #2C2C2C; border: 0; }
+.pcard .btn { margin-top: 15px; }
 
 /* ---------- MUHIM FILTR (oq blok) ---------- */
 
@@ -263,22 +307,23 @@ ul { margin: 0; padding: 0; list-style: none; }
 .filter__t .red { color: #E11D1D; }
 
 .fcard {
-  margin-top: 18px;
-  padding: 18px;
-  border-radius: 14px;
-  border: 1px solid transparent;
+  margin-top: 22px;
+  padding: 19px 17px;
+  border-radius: 21px;
+  border: .5px solid transparent;
 }
-.fcard--no  { background: var(--pink);  border-color: var(--pink-br); }
-.fcard--yes { background: var(--cream); border-color: var(--cream-br); }
+.fcard:first-of-type { margin-top: 14px; }
+.fcard--no  { background: #FFDADA; border-color: #FF0000; box-shadow: inset 3px 0 0 0 #FF0000; }
+.fcard--yes { background: #FFF6DF; border-color: #C77B00; box-shadow: inset 3px 0 0 0 #FFC207; }
 .fcard h3 {
+  font-family: var(--font-display);
   margin: 0 0 4px;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 24px;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
+  color: #000000;
 }
-.fcard--no h3  { color: #B91C1C; }
-.fcard--yes h3 { color: #111; }
 .fcard b { display: block; margin-bottom: 10px; color: #111; }
 .fcard li { display: flex; gap: 8px; margin-bottom: 10px; color: #1F1F23; }
 .fcard li:last-child { margin-bottom: 0; }
@@ -289,27 +334,30 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- Dastur (1/2/3-KUN) ---------- */
 
 .pill {
+  text-transform: uppercase;
   display: block;
   width: max-content;
   max-width: 100%;
-  margin: 0 auto 14px;
-  padding: 6px 16px;
-  border: 1px solid rgba(251,191,36,.45);
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--gold-txt);
+  margin: 0 auto 6px;
+  padding: 2px 12px;
+  border: 1px solid #3F3F46;
+  border-radius: 9999px;
+  background: rgba(24, 24, 27, .8);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: .3px;
+  color: #D4D4D8;
 }
 
 .day {
-  margin-top: 18px;
-  padding: 18px;
-  background: var(--card-2);
-  border: 1px solid rgba(251,191,36,.28);
-  border-radius: 14px;
+  margin-top: 22px;
+  padding: 30px 9px 19px 17px;
+  background: #111111;
+  border: .5px solid #D4AF37;
+  border-radius: 21px;
 }
+.day:first-of-type { margin-top: 16px; }
 .day__head {
   display: flex;
   align-items: flex-start;
@@ -317,29 +365,47 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: 12px;
 }
 .day__t {
+  font-family: var(--font-display);
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 24px;
   font-weight: 700;
   text-transform: uppercase;
 }
 .day__badge {
+  font-family: var(--font-display);
   flex: none;
-  padding: 4px 14px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--gold-1), var(--gold-2));
-  color: #111;
+  display: grid;
+  place-items: center;
+  width: 87px;
+  height: 25px;
+  margin-right: 8px;
+  border-radius: 12.5px;
+  background: #D4AF37;
+  color: #111111;
   font-size: 16px;
+  line-height: 23px;
   font-weight: 700;
   letter-spacing: .55px;
 }
-.day__lead { margin-top: 16px; font-weight: 700; color: var(--gold-txt); }
+.day__lead {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 19.5px;
+  font-weight: 700;
+  color: var(--gold-txt);
+}
+.day .bullets { margin-top: 12px; }
+.day .bullets li { line-height: 24px; }
 
 .natija {
-  margin-top: 16px;
+  margin-top: 20px;
+  margin-right: 8px;
   padding: 14px;
-  background: var(--card);
+  background: #18181B;
   border-radius: 10px;
+  font-size: 14px;
+  line-height: 22px;
   color: #D4D4D8;
 }
 .natija b { color: var(--gold-txt); }
@@ -352,11 +418,22 @@ ul { margin: 0; padding: 0; list-style: none; }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
+  height: 28px;
+  margin-bottom: 13px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #2C2C2C;
+  font-size: 16px;
+  line-height: 28px;
+  color: #FFFFFF;
 }
-.ratio__row:last-child { border-bottom: 0; }
-.ratio__num { font-size: 28px; font-weight: 800; letter-spacing: -.02em; }
+.ratio__row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+.ratio__num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
 
 .note {
   margin-top: 16px;
@@ -386,6 +463,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-radius: 14px;
 }
 .flow__t {
+  font-family: var(--font-display);
   margin: 0 0 14px;
   font-size: 15px;
   font-weight: 800;
@@ -395,11 +473,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .chip {
-  padding: 6px 12px;
-  background: var(--card);
-  border: 1px solid var(--line);
+  padding: 4px 10px;
+  background: #1A1A1E;
+  border: 1px solid #404040;
   border-radius: 8px;
   font-size: 13px;
+  line-height: 17px;
   white-space: nowrap;
 }
 .chip--gold {
@@ -420,6 +499,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-radius: 14px;
 }
 .nofit h3 {
+  font-family: var(--font-display);
   margin: 0 0 14px;
   font-size: 16px;
   line-height: 24px;
@@ -509,6 +589,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-radius: 14px;
 }
 .ecard h3 {
+  font-family: var(--font-display);
   margin: 0 0 14px;
   font-size: 20px;
   font-weight: 800;
@@ -606,10 +687,5 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Kattaroq ekranlar (dizayn mobil, kolonka kengayadi) ---------- */
 
-@media (min-width: 720px) {
-  :root { --w: 520px; --pad: 24px; }
-  body { font-size: 15px; line-height: 24px; }
-  .hero h1 { font-size: 30px; line-height: 40px; }
-  .h2 { font-size: 24px; line-height: 32px; }
-  .sect { padding-block: 56px; }
-}
+/* Dizayn 406px uchun chizilgan — barcha ekranlarda aynan shu ustun saqlanadi,
+   shuning uchun kattalashtiruvchi media-query yo'q. */
