@@ -858,7 +858,6 @@ hr { border: 0; margin: 0; }
 .acc__item.is-open .acc__a { grid-template-rows: 1fr; }
 .acc__a > div { overflow: hidden; }
 .acc__a p { padding: 0 15px 16px 12px; font-size: 16px; line-height: 22px; color: var(--body); }
-.acc__a p b { color: var(--gold-txt); font-weight: 700; }
 
 .acc-note {
   margin-top: 21px;
